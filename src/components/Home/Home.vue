@@ -13,13 +13,13 @@
     <!--tap切换-->
     <div class="tap">
       <div class="txt">
-        <div>推荐</div>
-        <div>新品</div>
-        <div>居家</div>
-        <div>电器</div>
-        <div>洗护</div>
-        <div>饮食</div>
-        <div>限时商品</div>
+        <div @click="changeshow(1)">推荐</div>
+        <div @click="changeshow(2)">新品</div>
+        <div @click="changeshow(3)">居家</div>
+        <div @click="changeshow(4)">电器</div>
+        <div @click="changeshow(5)">洗护</div>
+        <div @click="changeshow(6)">饮食</div>
+        <div @click="changeshow(7)">限时商品</div>
       </div>
     </div>
     <!--轮播图-->
@@ -46,7 +46,277 @@
       </div>
     </div>
     <!--物品滑动区域-->
-    <div class="articles">
+    <!--推荐-->
+    <div class="articles" v-show="isShowRecommend">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+    </div>
+    <!--新品-->
+    <div class="articles" v-show="isShowNews">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">新品</div>
+        <div class="money">200积分</div>
+      </div>
+
+    </div>
+    <!--居家-->
+    <div class="articles" v-show="isShowLiving">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">居家</div>
+        <div class="money">200积分</div>
+      </div>
+    </div>
+    <!--电器-->
+    <div class="articles" v-show="isShowElectronics">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+    </div>
+    <!--洗护-->
+    <div class="articles" v-show="isShowDaily">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+    </div>
+    <!--饮食-->
+    <div class="articles" v-show="isShowFoods">
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+      <div class="article">
+        <img src="./imgs/images1.png" alt="">
+        <div class="name">天然乳胶枕</div>
+        <div class="money">200积分</div>
+      </div>
+    </div>
+    <!--限时商品-->
+    <div class="articles" v-show="isShowTimeLimit">
       <div class="article">
         <img src="./imgs/images1.png" alt="">
         <div class="name">天然乳胶枕</div>
@@ -114,9 +384,23 @@
 <script>
   import Swiper from 'swiper';
   import 'swiper/dist/css/swiper.css'
+  import BScroll from 'better-scroll'
+  console.log(BScroll)
 
   export default {
     name: "Home",
+    data(){
+      return{
+        isShowRecommend:true,
+        isShowNews:false,
+        isShowLiving:false,
+        isShowElectronics:false,
+        isShowDaily:false,
+        isShowFoods:false,
+        isShowTimeLimit:false,
+
+      }
+    },
     mounted() {
       var mySwiper = new Swiper('.swiper-container', {
         autoplay: true,//可选选项，自动滑动
@@ -125,6 +409,78 @@
           clickable: true,
         }
       })
+      let wrapper = document.querySelector('.articles')
+      let scroll = new BScroll(wrapper)
+    },
+    methods:{
+      changeshow(type){
+        console.log(type)
+        if (type==1){
+        //  推荐
+            this.isShowRecommend=true,
+            this.isShowNews=false,
+            this.isShowLiving=false,
+            this.isShowElectronics=false,
+            this.isShowDaily=false,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=false
+
+        } else if(type==2){
+        //  新品
+            this.isShowRecommend=false,
+            this.isShowNews=true,
+            this.isShowLiving=false,
+            this.isShowElectronics=false,
+            this.isShowDaily=false,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=false
+        } else if (type==3){
+        //  居家
+          this.isShowRecommend=false,
+            this.isShowNews=false,
+            this.isShowLiving=true,
+            this.isShowElectronics=false,
+            this.isShowDaily=false,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=false
+        } else if (type==4){
+        //  电器
+          this.isShowRecommend=false,
+            this.isShowNews=false,
+            this.isShowLiving=false,
+            this.isShowElectronics=true,
+            this.isShowDaily=false,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=false
+        } else if (type==5){
+        //  洗护
+          this.isShowRecommend=false,
+            this.isShowNews=false,
+            this.isShowLiving=false,
+            this.isShowElectronics=false,
+            this.isShowDaily=true,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=false
+        } else if (type==6){
+        //  饮食
+          this.isShowRecommend=false,
+            this.isShowNews=false,
+            this.isShowLiving=false,
+            this.isShowElectronics=false,
+            this.isShowDaily=false,
+            this.isShowFoods=true,
+            this.isShowTimeLimit=false
+        } else if (type==7){
+        //  限时商品
+          this.isShowRecommend=false,
+            this.isShowNews=false,
+            this.isShowLiving=false,
+            this.isShowElectronics=false,
+            this.isShowDaily=false,
+            this.isShowFoods=false,
+            this.isShowTimeLimit=true
+        }
+      }
     }
   }
 </script>
@@ -204,6 +560,8 @@
       flex-wrap: wrap;
       justify-content: space-around;
       box-sizing: border-box;
+      height: 8rem;
+      overflow: scroll;
       .article{
         margin-top: .3rem;
         img{
