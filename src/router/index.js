@@ -8,8 +8,7 @@ import Mine from '../components/Mine/mine'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/home',
       name: 'Home',
       component: Home
@@ -29,5 +28,9 @@ export default new Router({
       name: 'Mine',
       component: Mine
     },
+    {
+      path: '*',
+      redirect: '/home'
+    }
   ]
 })
