@@ -1,24 +1,25 @@
 <template>
-  <div class="home">
-    <section class="upper">
+  <div class="container">
+    <div class="header">
       <!--搜索框-->
       <div class="search">
         <input type="text" placeholder="搜索商品,共31238123款">
       </div>
       <!--tap切换-->
-      <div class="tap">
+      <div class="tap" ref="tap">
         <div class="txt">
-          <div @click="changeshow(1)">推荐</div>
-          <div @click="changeshow(2)">新品</div>
-          <div @click="changeshow(3)">居家</div>
-          <div @click="changeshow(4)">电器</div>
-          <div @click="changeshow(5)">洗护</div>
-          <div @click="changeshow(6)">饮食</div>
-          <div @click="changeshow(7)">限时商品</div>
+          <div>推荐</div>
+          <div>新品</div>
+          <div>居家</div>
+          <div>电器</div>
+          <div>洗护</div>
+          <div>饮食</div>
+          <div>限时商品</div>
         </div>
       </div>
-    </section>
-    <div class="container" ref="scrollWrapper">
+    </div>
+    <!--Bscroll滚动区域-->
+    <div class="scroll-wrapper" ref="wrapper">
       <div class="scroll-content">
         <!--轮播图-->
         <div class="swiper-container">
@@ -43,13 +44,12 @@
             <div>实时发货</div>
           </div>
         </div>
-        <!--物品滑动区域-->
-        <!--推荐-->
+        <!--物品-->
         <div class="articles">
-          <div class="article" v-for="(item,i) in list">
-            <img :src="item.imgSrc" alt="">
+          <div class="article" v-for="item in list">
+            <img :src="item.imgUrl" alt="">
             <div class="name">{{item.name}}</div>
-            <div class="money">{{item.price}}积分</div>
+            <div class="money">{{item.price}}</div>
           </div>
         </div>
       </div>
@@ -58,176 +58,105 @@
 </template>
 
 <script>
-  import Swiper from 'swiper';
-  import 'swiper/dist/css/swiper.css'
-  import BScroll from 'better-scroll'
-  console.log(BScroll)
-
-  export default {
-    name: "Home",
-    data(){
-      return{
-        list:[
-          {
-          imgUrl:'xxxxxx',
-          name:'商品1',
-          price:200,
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.css'
+import BScroll from 'better-scroll'
+export default {
+  name: "Home",
+  data() {
+    return {
+      list: [
+        {
+          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2327746252,2179456318&fm=26&gp=0.jpg',
+          name: '商品1',
+          price: 4500
         },
         {
-          imgUrl:'xxxxxx',
-          name:'商品2',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品3',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品4',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
-        },{
-          imgUrl:'xxxxxx',
-          name:'商品5',
-          price:200,
+          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2476194888,4290783802&fm=26&gp=0.jpg',
+          name: '商品2',
+          price: 47200
         }
-        ],
-      }
-    },
-    mounted() {
-      var mySwiper = new Swiper('.swiper-container', {
-        autoplay: true,//可选选项，自动滑动
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+        , {
+          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3157567589,2647817933&fm=26&gp=0.jpg',
+          name: '商品3',
+          price: 262330
         }
-      })
-      let scroll = new BScroll(this.$refs.scrollWrapper)
-      console.log(scroll)
-    },
-    methods:{
-      changeshow(type){
-        console.log(type)
-        if (type==1){
-        //  推荐
-            this.isShowRecommend=true,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
+        , {
+          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2620291091,1639543135&fm=26&gp=0.jpg',
+          name: '商品3',
+          price: 180330
+        }
+        , {
+          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1204343166,70149784&fm=26&gp=0.jpg',
+          name: '商品4',
+          price: 97233
+        }
+        , {
+          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1726309332,192696640&fm=26&gp=0.jpg',
+          name: '商品5',
+          price: 678123
+        }
+        , {
+          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=789324485,2295523873&fm=26&gp=0.jpg',
+          name: '商品6',
+          price: 31233
+        }, {
+          imgUrl: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1643083994,177811625&fm=26&gp=0.jpg',
+          name: '商品7',
+          price: 28422
+        }
+      ],
+      isShowRecommend: true,
+      isShowNews: false,
+      isShowLiving: false,
+      isShowElectronics: false,
+      isShowDaily: false,
+      isShowFoods: false,
+      isShowTimeLimit: false,
 
-        } else if(type==2){
-        //  新品
-            this.isShowRecommend=false,
-            this.isShowNews=true,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==3){
-        //  居家
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=true,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==4){
-        //  电器
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=true,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==5){
-        //  洗护
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=true,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==6){
-        //  饮食
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=true,
-            this.isShowTimeLimit=false
-        } else if (type==7){
-        //  限时商品
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=true
-        }
-      }
     }
+  },
+  mounted() {
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,//可选选项，自动滑动
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    })
+    let wrapper = this.$refs.wrapper
+    let tap = this.$refs.tap
+    let scroll1 = new BScroll(wrapper)
+    let scroll2 = new BScroll(tap, {
+      scrollX: true,
+      click: true
+    })
+  },
+  methods: {
+
   }
+}
 </script>
 
 <style scoped lang="less">
-@import '../../assets/css/config.less';
-h3 {
-  color: @text-color;
-}
 .container {
+  width: 100%;
+  height: 100%;
   font-size: 0.36rem;
-
-  .swiper-container {
-    height: 3.6rem;
-    background: pink;
-  }
-  .ctxt {
-    width: 100%;
-    height: 0.88rem;
-    display: flex;
-    justify-content: space-around;
-    color: #686868;
-    font-size: 0.24rem;
-    img {
-      width: 0.24rem;
-      height: 0.24rem;
-      margin-right: 0.1rem;
-    }
-    .fle {
+  padding-top: 1.76rem;
+  padding-bottom: 0.98rem;
+  box-sizing: border-box;
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: #ffffff;
+    .title {
+      height: 0.88rem;
       display: flex;
       align-items: center;
+      padding: 0 0.16rem;
+      box-sizing: border-box;
     }
   }
   .articles {
@@ -293,22 +222,75 @@ h3 {
       width: 100%;
       height: 0.68rem;
       font-size: 0.28rem;
-      padding: 0.2rem;
+      padding: 0.2rem 0 0.2rem 0.2rem;
       box-sizing: border-box;
       font-size: 0.28rem;
-
+      margin-top: 0.2rem;
       .txt {
         overflow-x: auto;
         display: flex;
+        width: 100%;
         div {
-          width: 2rem;
           margin-right: 0.4rem;
+          &:nth-last-child {
+            margin-right: 0;
+          }
         }
       }
     }
   }
-  .container {
+
+  .scroll-wrapper {
+    width: 100%;
     height: 100%;
+    .swiper-container {
+      height: 3.6rem;
+      background: pink;
+    }
+    .ctxt {
+      width: 100%;
+      height: 0.88rem;
+      display: flex;
+      justify-content: space-around;
+      color: #686868;
+      font-size: 0.24rem;
+      img {
+        width: 0.24rem;
+        height: 0.24rem;
+        margin-right: 0.1rem;
+      }
+      .fle {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .articles {
+      padding: 0.3rem 0.3rem 0 0.3rem;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      overflow: scroll;
+      .article {
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        img {
+          width: 2.1rem;
+          height: 2.1rem;
+        }
+        .name {
+          font-size: 0.24rem;
+        }
+        .money {
+          color: #fe864c;
+          font-size: 0.24rem;
+        }
+      }
+    }
   }
 }
 </style>
