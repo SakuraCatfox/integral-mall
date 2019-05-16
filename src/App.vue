@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <Nav></Nav>
+    <Nav v-if="showRouter"></Nav>
   </div>
 </template>
 
@@ -9,7 +9,25 @@
   import Nav from './components/Navigation/navigation'
 export default {
   name: 'App',
-  components:{Nav}
+  components:{Nav},
+  data(){
+    return{
+
+    }
+  },
+  created(){
+    var c=window
+  },
+  computed:{
+    showRouter(){
+      let route=this.$route.path
+      if (route!='/home'&&route!='/intergral'&&route!='/mine'){
+        return false
+      }else {
+        return true
+      }
+    }
+  }
 }
 </script>
 
@@ -29,6 +47,7 @@ export default {
   body{
     margin: 0;
   }
+
 #app {
 
 }

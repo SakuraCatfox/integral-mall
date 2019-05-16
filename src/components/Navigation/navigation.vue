@@ -1,14 +1,14 @@
 <template>
     <div class="nav-container">
-      <div @click="jumptohome">
+      <div @click="jumptohome" :class="this.$route.path=='/home'?'active':''">
         <img src="./imgs/ic_mine.png" alt="">
         商城
       </div>
-      <div @click="jumptointergral">
+      <div @click="jumptointergral" :class="this.$route.path=='/intergral'?'active':''">
         <img src="./imgs/ic_mine.png" alt="">
         积分
       </div>
-      <div @click="jumptomine">
+      <div @click="jumptomine" :class="this.$route.path=='/mine'?'active':''">
         <img src="./imgs/ic_mine.png" alt="">
         管理
       </div>
@@ -39,7 +39,10 @@
           jumptomine(){
             this.$router.push({ path: 'mine' })
           }
-        }
+        },
+      computed:{
+
+      }
     }
 </script>
 
@@ -62,6 +65,9 @@
       width: .3rem;
       height: .36rem;
       margin-bottom: .1rem;
+    }
+    .active{
+      color: #FF8A00;
     }
   }
 </style>

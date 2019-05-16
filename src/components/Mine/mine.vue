@@ -38,22 +38,22 @@
 
       <!--订单中心、积分明细、资金管理-->
       <div class="bottom">
-        <div class="order-form">
-          <div class="left">
+        <div class="order-form" @click="jumptoordercenter">
+          <div class="left" >
             <div class="icn"></div>
             <div class="txt">订单中心</div>
           </div>
           <div class="toright">></div>
         </div>
-        <div class="order-form">
+        <div class="order-form" @click="jumptointergralquery">
           <div class="left">
-            <div class="icn" style="background: #FF8A00 "></div>
+            <div class="icn" style="background: #FF8A00 " ></div>
             <div class="txt">积分查询</div>
           </div>
           <div class="toright">></div>
         </div>
         <div class="order-form">
-          <div class="left">
+          <div class="left" @click="jumptomoneyquery">
             <div class="icn" style="background:#FF6472"></div>
             <div class="txt">资金管理</div>
           </div>
@@ -65,7 +65,18 @@
 
 <script>
     export default {
-        name: "mine"
+        name: "mine",
+        methods:{
+          jumptoordercenter(){
+            this.$router.push({path:'ordercenter'})
+          },
+          jumptointergralquery(){
+            this.$router.push({path:'integralquery'})
+          },
+          jumptomoneyquery(){
+            this.$router.push({path:'moneyquery'})
+          }
+        }
     }
 </script>
 
