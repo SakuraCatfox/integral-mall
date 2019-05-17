@@ -133,74 +133,6 @@
       })
     },
     methods:{
-      changeshow(type){
-        console.log(type)
-        if (type==1){
-        //  推荐
-            this.isShowRecommend=true,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-
-        } else if(type==2){
-        //  新品
-            this.isShowRecommend=false,
-            this.isShowNews=true,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==3){
-        //  居家
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=true,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==4){
-        //  电器
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=true,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==5){
-        //  洗护
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=true,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=false
-        } else if (type==6){
-        //  饮食
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=true,
-            this.isShowTimeLimit=false
-        } else if (type==7){
-        //  限时商品
-          this.isShowRecommend=false,
-            this.isShowNews=false,
-            this.isShowLiving=false,
-            this.isShowElectronics=false,
-            this.isShowDaily=false,
-            this.isShowFoods=false,
-            this.isShowTimeLimit=true
-        }
-      }
     }
   }
 </script>
@@ -212,6 +144,7 @@
     font-size: .36rem;
     padding-top: 1.76rem;
     padding-bottom: .98rem;
+    box-sizing: border-box;
     .header{
       position: fixed;
       top: 0;

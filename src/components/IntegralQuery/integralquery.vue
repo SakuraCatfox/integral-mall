@@ -9,12 +9,8 @@
       <div style="margin-left:.3rem">积分明细</div>
       <div style="margin-right:.3rem" class="btn">提现记录</div>
     </div>
+    <Tap :options="TapOptions" @change="clickhandle"></Tap>
     <div class="from-list">
-      <div class="list-tap">
-        <div>平台发放</div>
-        <div>积分提现</div>
-        <div>兑换商品</div>
-      </div>
       <div class="type" v-for="item in list">
         <div class="left">
           <div style="font-size: .3rem">{{item.type}}</div>
@@ -29,28 +25,28 @@
 </template>
 
 <script>
+  import Tap from '../../common/Tap/Tap'
     export default {
         name: "integralquery",
+        components:{Tap},
         data(){
           return{
-            list:[{
-              type:"平台发放",
-              date:'2018-09-10 10:09:12',
-              num:'+ 2000.00'
-            },
-              {
-                type:"他人转入",
-                date:'2018-09-10 10:09:12',
-                num:'+ 2000.00'
-              },
-              {
-                type:"积分售出",
-                date:'2018-09-10 10:09:12',
-                num:'- 500.00'
-              }
-            ]
+            list:[{type:"平台发放", date:'2018-09-10 10:09:12', num:'+ 2000.00'},
+                  {type:"他人转入", date:'2018-09-10 10:09:12', num:'+ 2000.00'},
+                  {type:"积分售出", date:'2018-09-10 10:09:12', num:'- 500.00'}
+                  ],
+            TapOptions:[
+              {taptype:'平台发放', value:''},
+              {taptype:'积分提现', value:'1'},
+              {taptype:'兑换商品', value:'2'},
+            ],
           }
+        },
+      methods:{
+        change(){
+
         }
+      }
     }
 </script>
 

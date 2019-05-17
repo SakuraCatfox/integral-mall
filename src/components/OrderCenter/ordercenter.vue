@@ -1,12 +1,7 @@
 <template>
     <div class="container">
-      <div class="header">
-        <div>全部</div>
-        <div>待发货</div>
-        <div>已发货</div>
-        <div>已完成</div>
-      </div>
-      <div class="articles" v-for="item in list">
+      <Tap :options="TapOptions" @change="clickHandler"></Tap>
+      <div class="articles" v-for="item in list" >
         <div class="article">
           <div class="order-num">
             <div>
@@ -33,8 +28,10 @@
 </template>
 
 <script>
+    import Tap from '../../common/Tap/Tap'
     export default {
         name: "ordercenter",
+        components:{Tap},
         data(){
           return{
             list:[
@@ -109,9 +106,20 @@
                 count:1,
                 status:'待发货'
               },
+            ],
+            TapOptions:[
+              {taptype:'全部', value:'',},
+              {taptype:'代发货', value:'1',},
+              {taptype:'已发货', value:'2',},
+              {taptype:'已收货', value:'3',},
             ]
           }
+        },
+      methods:{
+        change(){
+
         }
+      }
     }
 </script>
 
@@ -120,6 +128,7 @@
     width: 100%;
     background: #F3F3F3;
     box-sizing: border-box;
+
     .header{
       width: 100%;
       height: .78rem;
