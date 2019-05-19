@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <Tap :options="TapOptions" @change="clickHandler"></Tap>
+      <Tap :options="TapOptions" @change="changeHandler"></Tap>
       <div class="articles" v-for="item in list" >
         <div class="article">
           <div class="order-num">
@@ -116,7 +116,7 @@
           }
         },
       methods:{
-        change(){
+        changeHandler(){
 
         }
       }
