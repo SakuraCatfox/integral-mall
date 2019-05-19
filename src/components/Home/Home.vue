@@ -76,44 +76,16 @@ export default {
           name: '商品2',
           price: 47200
         }
-        , {
-          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3157567589,2647817933&fm=26&gp=0.jpg',
-          name: '商品3',
-          price: 262330
-        }
-        , {
-          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2620291091,1639543135&fm=26&gp=0.jpg',
-          name: '商品3',
-          price: 180330
-        }
-        , {
-          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1204343166,70149784&fm=26&gp=0.jpg',
-          name: '商品4',
-          price: 97233
-        }
-        , {
-          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1726309332,192696640&fm=26&gp=0.jpg',
-          name: '商品5',
-          price: 678123
-        }
-        , {
-          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=789324485,2295523873&fm=26&gp=0.jpg',
-          name: '商品6',
-          price: 31233
-        }, {
-          imgUrl: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1643083994,177811625&fm=26&gp=0.jpg',
-          name: '商品7',
-          price: 28422
-        }
-      ],
-      isShowRecommend: true,
-      isShowNews: false,
-      isShowLiving: false,
-      isShowElectronics: false,
-      isShowDaily: false,
-      isShowFoods: false,
-      isShowTimeLimit: false,
-
+      })
+      let wrapper=this.$refs.wrapper
+      let tap=this.$refs.tap
+      let scroll1=new BScroll(wrapper)
+      let scroll2=new BScroll(tap,{
+        scrollX: true,
+        click: true
+      })
+    },
+    methods:{
     }
   },
   mounted() {
@@ -162,16 +134,23 @@ export default {
   .articles {
     padding: 0.3rem 0.3rem 0 0.3rem;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    height: 100%;
+    font-size: .36rem;
+    padding-top: 1.76rem;
+    padding-bottom: .98rem;
     box-sizing: border-box;
-    overflow: scroll;
-    .article {
-      margin-top: 0.3rem;
-      margin-right: 25px;
-      &:nth-child(3n) {
-        margin-right: 0;
+    .header{
+      position: fixed;
+      top: 0;
+      z-index: 99;
+      background: #ffffff;
+      .title {
+        height: .88rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .16rem;
+        box-sizing: border-box;
       }
       img {
         width: 2.1rem;

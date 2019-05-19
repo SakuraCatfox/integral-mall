@@ -7,6 +7,7 @@ import Mine from '../components/Mine/mine'
 import OrderCenter from '../components/OrderCenter/ordercenter'
 import IntegralQuery from '../components/IntegralQuery/integralquery'
 import MoneyQuery from '../components/MoneyQuery/moneyquery'
+import Tap from '../common/Tap/Tap'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/moneyquery',
       name: 'MoneyQuery',
       component: MoneyQuery
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Tap
     },
     {
       path:'*',

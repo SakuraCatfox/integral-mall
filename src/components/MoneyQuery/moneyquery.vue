@@ -20,7 +20,7 @@
     </div>
     <div class="next">
       <div style="margin-left:.3rem">资金明细</div>
-      
+
     </div>
     <div class="from-list">
       <div class="list-tap">
