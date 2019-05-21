@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <Tap :options="TapOptions" @change="clickHandler"></Tap>
-      <div class="articles" v-for="item in list" >
+      <div class="articles" v-for="item in list"  @click="jumptoorder(item.id)">
         <div class="article">
           <div class="order-num">
             <div>
@@ -41,7 +41,8 @@
                 date:'2019-08-01 19:21:13',
                 name:'Apple',
                 count:1,
-                status:'待发货'
+                status:'待发货',
+                id:1
               },
               {
                 ordernum:2474237893411,
@@ -49,7 +50,8 @@
                 date:'2018-12-01 19:41:13',
                 name:'Banana',
                 count:1,
-                status:'待发货'
+                status:'待发货',
+                id:2
               },
               {
                 ordernum:78347238847873,
@@ -57,14 +59,16 @@
                 date:'2019-01-02 11:21:13',
                 name:'Apple',
                 count:1,
-                status:'待发货'
+                status:'待发货',
+                id:3,
               },
               {
                 ordernum:521834197131489,
                 imgUrl:'http://img5.imgtn.bdimg.com/it/u=2439458277,626495660&fm=26&gp=0.jpg',
                 date:'2019-08-14 14:11:13',
                 count:1,
-                status:'待发货'
+                status:'待发货',
+                id:4
               },
               {
                 ordernum:817329739127391,
@@ -116,8 +120,11 @@
           }
         },
       methods:{
-        change(){
+        clickHandler(){
 
+        },
+        jumptoorder(itemId){
+          this.$router.push({path:`/order/${itemId}`})
         }
       }
     }

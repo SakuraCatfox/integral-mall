@@ -7,7 +7,10 @@ import Mine from '../components/Mine/mine'
 import OrderCenter from '../components/OrderCenter/ordercenter'
 import IntegralQuery from '../components/IntegralQuery/integralquery'
 import MoneyQuery from '../components/MoneyQuery/moneyquery'
+import ProductDetails from '../components/ProductDetails/productdetails'
 import Tap from '../common/Tap/Tap'
+import ExChange from '../components/ExChange/exchange'
+import Order from '../components/Order/Order'
 
 Vue.use(Router)
 
@@ -57,6 +60,21 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: Tap
+    },
+    {
+      path:'/productdetails/:id',
+      name:'productdetails',
+      component:ProductDetails
+    },
+    {
+      path:'/exchange/:id',
+      name:'exchange',
+      component:ExChange
+    },
+    {
+      path:'/order/:id',
+      name:'order',
+      component:Order
     },
     {
       path:'*',

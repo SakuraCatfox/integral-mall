@@ -8,13 +8,13 @@
       <!--tap切换-->
       <div class="tap" ref="tap">
         <div class="txt">
-          <div @click="changeshow(1)">推荐</div>
-          <div @click="changeshow(2)">新品</div>
-          <div @click="changeshow(3)">居家</div>
-          <div @click="changeshow(4)">电器</div>
-          <div @click="changeshow(5)">洗护</div>
-          <div @click="changeshow(6)">饮食</div>
-          <div @click="changeshow(7)">限时商品</div>
+          <div>推荐</div>
+          <div>新品</div>
+          <div>居家</div>
+          <div>电器</div>
+          <div>洗护</div>
+          <div>饮食</div>
+          <div>限时商品</div>
         </div>
       </div>
     </div>
@@ -45,8 +45,8 @@
           </div>
         </div>
         <!--物品-->
-        <div class="articles">
-          <div class="article" v-for="item in list">
+        <div class="articles"  >
+          <div class="article" v-for="item in list" @click="jumptoproductdetails(item.id)">
             <img :src="item.imgUrl" alt="">
             <div class="name">{{item.name}}</div>
             <div class="money">{{item.price}}</div>
@@ -69,41 +69,50 @@
           {
             imgUrl:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2327746252,2179456318&fm=26&gp=0.jpg',
             name:'商品1',
-            price:4500
+            price:4500,
+            id:1,
           },
           {
             imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2476194888,4290783802&fm=26&gp=0.jpg',
             name:'商品2',
-            price:47200
+            price:47200,
+            id:2,
+
           }
           , {
             imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3157567589,2647817933&fm=26&gp=0.jpg',
             name:'商品3',
-            price:262330
+            price:262330,
+            id:3,
           }
           , {
             imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2620291091,1639543135&fm=26&gp=0.jpg',
             name:'商品3',
-            price:180330
+            price:180330,
+            id:4,
           }
           , {
             imgUrl:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1204343166,70149784&fm=26&gp=0.jpg',
             name:'商品4',
-            price:97233
+            price:97233,
+            id:5,
           }
           , {
             imgUrl:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1726309332,192696640&fm=26&gp=0.jpg',
             name:'商品5',
-            price:678123
+            price:678123,
+            id:6,
           }
           , {
             imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=789324485,2295523873&fm=26&gp=0.jpg',
             name:'商品6',
-            price:31233
+            price:31233,
+            id:7,
           }, {
             imgUrl:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1643083994,177811625&fm=26&gp=0.jpg',
             name:'商品7',
-            price:28422
+            price:28422,
+            id:8,
           }
         ],
         isShowRecommend:true,
@@ -126,13 +135,19 @@
       })
       let wrapper=this.$refs.wrapper
       let tap=this.$refs.tap
-      let scroll1=new BScroll(wrapper)
+      let scroll1=new BScroll(wrapper,{
+        click:true
+      })
       let scroll2=new BScroll(tap,{
         scrollX: true,
         click: true
       })
     },
     methods:{
+      jumptoproductdetails(itemId){
+        console.log('jumptoproductdetails',itemId)
+        this.$router.push({path:`/productdetails/${itemId}`})
+      },
     }
   }
 </script>
