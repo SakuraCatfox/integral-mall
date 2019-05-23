@@ -11,6 +11,9 @@ import ProductDetails from '../components/ProductDetails/productdetails'
 import Tap from '../common/Tap/Tap'
 import ExChange from '../components/ExChange/exchange'
 import Order from '../components/Order/Order'
+import Set from '../components/Set/set'
+import ChangeName from '../components/ChangName/changename'
+import ChangeLoginPassword from '../components/ChangeLoginPassword/changeloginpassword'
 
 Vue.use(Router)
 
@@ -75,6 +78,21 @@ export default new Router({
       path:'/order/:id',
       name:'order',
       component:Order
+    },
+    {
+      path:'/set',
+      name:'set',
+      component:Set
+    },
+    {
+      path:'/changename',
+      name:'changename',
+      component:ChangeName
+    },
+    {
+      path:'/changeloginpassword',
+      name:'changeloginpassword',
+      component:ChangeLoginPassword
     },
     {
       path:'*',

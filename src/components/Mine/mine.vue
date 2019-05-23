@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="user-msg">
-        <div class="icn">
+        <div class="icn" @click="jumptoset">
 
         </div>
         <div class="user">
@@ -75,6 +75,9 @@
           },
           jumptomoneyquery(){
             this.$router.push({path:'moneyquery'})
+          },
+          jumptoset(){
+            this.$router.push({path:'set'})
           }
         }
     }
