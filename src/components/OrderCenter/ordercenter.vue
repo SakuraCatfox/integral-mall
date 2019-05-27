@@ -1,7 +1,12 @@
 <template>
     <div class="container">
+<<<<<<< HEAD
       <Tap :options="TapOptions" @change="clickHandler"></Tap>
       <div class="articles" v-for="item in list"  @click="jumptoorder(item.id)">
+=======
+      <Tap :options="TapOptions" @change="changeHandler"></Tap>
+      <div class="articles" v-for="item in list" >
+>>>>>>> 9452bba46282d9e1c82728752409afa5b2d367d6
         <div class="article">
           <div class="order-num">
             <div>
@@ -10,21 +15,21 @@
             <span>{{item.ordernum}}</span>
             <div>
             {{item.date}}
-            </div>
           </div>
-          <div class="order-status">
-            <img :src="item.imgUrl" alt="">
-            <div class="txt">
-              <div style="margin-bottom: .36rem">{{item.name}}</div>
-              <span style="font-size: .24rem;">数量 x{{item.count}}</span>
-            </div>
-            <div class="status">
-              {{item.status}}
-            </div>
+        </div>
+        <div class="order-status">
+          <img :src="item.imgUrl" alt="">
+          <div class="txt">
+            <div style="margin-bottom: .36rem">{{item.name}}</div>
+            <span style="font-size: .24rem;">数量 x{{item.count}}</span>
+          </div>
+          <div class="status">
+            {{item.status}}
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -120,7 +125,11 @@
           }
         },
       methods:{
+<<<<<<< HEAD
         clickHandler(v){
+=======
+        changeHandler(){
+>>>>>>> 9452bba46282d9e1c82728752409afa5b2d367d6
 
         },
         jumptoorder(itemId){
@@ -128,64 +137,55 @@
         }
       }
     }
+  }
+}
 </script>
 
 <style scoped lang="less">
-  .container{
+.container {
+  width: 100%;
+  background: #f3f3f3;
+  box-sizing: border-box;
+
+  .articles {
     width: 100%;
-    background: #F3F3F3;
+    height: 2.72rem;
+    background: #ffffff;
     box-sizing: border-box;
 
     .header{
       width: 100%;
-      height: .78rem;
-      font-size: .28rem;
-      line-height: .78rem;
-      padding: 0 .6rem 0 .6rem;
+      padding: 0.3rem;
       box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      color: #989898;
-      background: #ffffff;
-    }
-    .articles{
-      width: 100%;
-      height: 2.72rem;
-      background: #ffffff;
-      box-sizing: border-box;
-      position: relative;
-      margin-top: .18rem;
-      .article{
+      .order-num {
+        font-size: 0.24rem;
         width: 100%;
-        padding: .3rem;
-        box-sizing: border-box;
-        .order-num{
-          font-size: .24rem;
-          width: 100%;
-          margin-bottom: .3rem;
-          display: flex;
-          justify-content: space-between;
-
+        margin-bottom: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .order-status {
+        display: flex;
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 0.3rem;
         }
-        .order-status{
-          display: flex;
-          img{
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-right: .3rem;
-          }
-          .txt{
-            font-size: .28rem;
-          }
-          .status{
-            position: absolute;
-            top: 1.46rem;
-            right: .3rem;
-            font-size: .36rem;
-            color: #FE864C;
-          }
+        .txt {
+          font-size: 0.28rem;
+        }
+        .status {
+          position: absolute;
+          top: 1.46rem;
+          right: 0.3rem;
+          font-size: 0.36rem;
+          color: #fe864c;
         }
       }
     }
   }
+  .tabs2 {
+    height: 200px;
+  }
+}
 </style>

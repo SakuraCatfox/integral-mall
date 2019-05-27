@@ -21,8 +21,7 @@ import AddAddress from '../components/AddAddress/addaddress'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/home',
       name: 'Home',
       component: Home

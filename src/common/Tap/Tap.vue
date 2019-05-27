@@ -1,7 +1,8 @@
 <template>
       <div class="header" >
         <div v-for="(item,i) in options" @click="clickHandler(item.value)"
-        :class="curentValue==item.value?'actived':''">
+        class="tab-item"
+        :class="{'actived':curentValue==item.value}">
           <div>{{item.taptype}}</div>
         </div>
       </div>
@@ -15,16 +16,21 @@
             type:Array,
             required:true,
             default:()=>[]
-          }
+          },
+          defaultValue:{}
         },
         data(){
-          let defaultValue=this.options[0]&&this.options[0].value
+          let defaultValue
+          if(this.defaultValue) defaultValue = this.defaultValue
+           // 初始化设置为第一个
+          else defaultValue = this.options[0]&&this.options[0].value
           return {
             curentValue:defaultValue
           }
         },
         methods:{
           clickHandler(value){
+            // value为点击的值，curentValue当前值
             if (value===this.curentValue) return
             this.curentValue=value
             this.$emit('change',value)

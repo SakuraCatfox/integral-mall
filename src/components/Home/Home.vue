@@ -58,6 +58,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   import Swiper from 'swiper';
   import 'swiper/dist/css/swiper.css'
   import BScroll from 'better-scroll'
@@ -131,6 +132,25 @@
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
+=======
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.css'
+import BScroll from 'better-scroll'
+export default {
+  name: "Home",
+  data() {
+    return {
+      list: [
+        {
+          imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2327746252,2179456318&fm=26&gp=0.jpg',
+          name: '商品1',
+          price: 4500
+        },
+        {
+          imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2476194888,4290783802&fm=26&gp=0.jpg',
+          name: '商品2',
+          price: 47200
+>>>>>>> 9452bba46282d9e1c82728752409afa5b2d367d6
         }
       })
       let wrapper=this.$refs.wrapper
@@ -149,11 +169,52 @@
         this.$router.push({path:`/productdetails/${itemId}`})
       },
     }
+  },
+  mounted() {
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,//可选选项，自动滑动
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    })
+    let wrapper = this.$refs.wrapper
+    let tap = this.$refs.tap
+    let scroll1 = new BScroll(wrapper)
+    let scroll2 = new BScroll(tap, {
+      scrollX: true,
+      click: true
+    })
+  },
+  methods: {
+
   }
+}
 </script>
 
 <style scoped lang="less">
-  .container {
+.container {
+  width: 100%;
+  height: 100%;
+  font-size: 0.36rem;
+  padding-top: 1.76rem;
+  padding-bottom: 0.98rem;
+  box-sizing: border-box;
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: #ffffff;
+    .title {
+      height: 0.88rem;
+      display: flex;
+      align-items: center;
+      padding: 0 0.16rem;
+      box-sizing: border-box;
+    }
+  }
+  .articles {
+    padding: 0.3rem 0.3rem 0 0.3rem;
     width: 100%;
     height: 100%;
     font-size: .36rem;
@@ -173,99 +234,125 @@
         padding: 0 .16rem;
         box-sizing: border-box;
       }
-      .search {
-        width: 100%;
-        height: .88rem;
-        padding: .3rem;
-        box-sizing: border-box;
-        input {
-          width: 6.9rem;
-          height: .6rem;
-          background: #EDEDED;
-          outline-style: none;
-          outline-width: 0px;
-          border: none;
-          border-style: none;
-          text-shadow: none;
-          text-align: center;
-
-        }
+      img {
+        width: 2.1rem;
+        height: 2.1rem;
       }
-      .tap {
-        width: 100%;
-        height: .68rem;
-        font-size: .28rem;
-        padding: .2rem 0 .2rem .2rem;
-        box-sizing: border-box;
-        font-size: .28rem;
-        margin-top: .2rem;
-        .txt {
-          overflow-x: auto;
-          display: flex;
-          width: 100%;
-          div {
-            margin-right: .4rem;
-            &:nth-last-child{
-              margin-right: 0;
-            }
-          }
-        }
+      .name {
+        font-size: 0.24rem;
+      }
+      .money {
+        color: #fe864c;
+        font-size: 0.24rem;
       }
     }
-
-    .scroll-wrapper{
+  }
+}
+</style>
+<style lang="less" scoped>
+.home {
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 78px;
+  padding-bottom: 49px;
+  .upper {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+    font-size: 14px;
+    background: #fff;
+    .search {
       width: 100%;
-      height: 100%;
-      .swiper-container {
-        height: 3.6rem;
-        background: pink;
+      height: 0.88rem;
+      padding: 0.3rem;
+      box-sizing: border-box;
+      input {
+        width: 6.9rem;
+        height: 0.6rem;
+        background: #ededed;
+        outline-style: none;
+        outline-width: 0px;
+        border: none;
+        border-style: none;
+        text-shadow: none;
+        text-align: center;
       }
-      .ctxt {
-        width: 100%;
-        height: .88rem;
+    }
+    .tap {
+      width: 100%;
+      height: 0.68rem;
+      font-size: 0.28rem;
+      padding: 0.2rem 0 0.2rem 0.2rem;
+      box-sizing: border-box;
+      font-size: 0.28rem;
+      margin-top: 0.2rem;
+      .txt {
+        overflow-x: auto;
         display: flex;
-        justify-content: space-around;
-        color: #686868;
-        font-size: .24rem;
-        img {
-          width: .24rem;
-          height: .24rem;
-          margin-right: .1rem;
-        }
-        .fle {
-          display: flex;
-          align-items: center;
-
-        }
-      }
-      .articles{
-        padding: .3rem .3rem 0 .3rem;
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        box-sizing: border-box;
-        overflow: scroll;
-        .article{
-          margin-top: .3rem;
-          margin-right: .3rem;
-          &:nth-child(3n){
+        div {
+          margin-right: 0.4rem;
+          &:nth-last-child {
             margin-right: 0;
           }
-          img{
-            width: 2.1rem;
-            height: 2.1rem;
-          }
-          .name{
-            font-size:.24rem;
-          }
-          .money{
-            color: #FE864C;
-            font-size:.24rem;
-          }
         }
       }
     }
-
   }
+
+  .scroll-wrapper {
+    width: 100%;
+    height: 100%;
+    .swiper-container {
+      height: 3.6rem;
+      background: pink;
+    }
+    .ctxt {
+      width: 100%;
+      height: 0.88rem;
+      display: flex;
+      justify-content: space-around;
+      color: #686868;
+      font-size: 0.24rem;
+      img {
+        width: 0.24rem;
+        height: 0.24rem;
+        margin-right: 0.1rem;
+      }
+      .fle {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .articles {
+      padding: 0.3rem 0.3rem 0 0.3rem;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      overflow: scroll;
+      .article {
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        img {
+          width: 2.1rem;
+          height: 2.1rem;
+        }
+        .name {
+          font-size: 0.24rem;
+        }
+        .money {
+          color: #fe864c;
+          font-size: 0.24rem;
+        }
+      }
+    }
+  }
+}
 </style>
+

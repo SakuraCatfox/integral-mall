@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Nav from './components/Navigation/navigation'
+import Nav from './components/Navigation/navigation'
 export default {
   name: 'App',
   components:{Nav},
@@ -32,10 +32,7 @@ export default {
 </script>
 
 <style>
-  html{
-    height: 100%;
-  }
-  body{
+html {
   height: 100%;
   }
   #app{
@@ -49,7 +46,5 @@ export default {
   }
 
 #app {
-
 }
-
 </style>
