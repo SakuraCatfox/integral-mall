@@ -43,7 +43,7 @@
           }
         },
       methods:{
-        change(){
+        clickhandle(){
 
         }
       }

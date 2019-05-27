@@ -1,93 +1,98 @@
 <template>
-    <div class="container">
-      <div class="user-info">
-          <div class="pic">
-            <div class="img"></div>
-            <div class="name">魏爸爸</div>
-          </div>
-        <div class="name1" @click="jumptochangename">
-          <div>
-            昵称
-          </div>
-          <div>></div>
-        </div>
-        <div class="line">
-
-        </div>
+  <div class="container">
+    <div class="user-info">
+      <div class="pic">
+        <div class="img"></div>
+        <div class="name">魏爸爸</div>
       </div>
-      <div class="password">
+      <div class="name1" @click="jumptochangename">
         <div>
-          <div class="signup" @click="jumptochangeloginpassword">
-            <div>登录密码</div>
-            <div>></div>
-          </div>
-          <div class="trad">
-            <div>交易密码</div>
-            <div>></div>
-          </div>
+          昵称
         </div>
-        <div class="line">
-
-        </div>
-      </div>
-      <div class="address">
-        <div>收货地址</div>
         <div>></div>
       </div>
+      <div class="line">
+
+      </div>
     </div>
+    <div class="password">
+      <div>
+        <div class="signup" @click="jumptochangeloginpassword">
+          <div>登录密码</div>
+          <div>></div>
+        </div>
+        <div class="trad" @click="jumptochangetradpassword">
+          <div>交易密码</div>
+          <div>></div>
+        </div>
+      </div>
+      <div class="line">
+
+      </div>
+    </div>
+    <div class="address" @click="jumptoaddress">
+      <div>收货地址</div>
+      <div>></div>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "set",
-        data(){
-          return{
+  export default {
+    name: "set",
+    data() {
+      return {}
+    },
+    methods: {
+      jumptochangename() {
+        this.$router.push({path: 'changename'})
+      },
+      jumptochangeloginpassword() {
+        this.$router.push({path: 'changeloginpassword'})
+      },
+      jumptochangetradpassword() {
+        this.$router.push({path: 'changetradpassword'})
+      },
+      jumptoaddress() {
+        this.$router.push({path: 'ress'})
+      },
 
-          }
-        },
-      methods:{
-          jumptochangename(){
-            this.$router.push({path:'changename'})
-          },
-          jumptochangeloginpassword(){
-          this.$router.push({path:'changeloginpassword'})
-        }
-      }
     }
+  }
 </script>
 
 <style scoped lang="less">
-  .container{
+  .container {
     width: 100%;
     height: 100%;
     background: #F3F3F3;
     font-size: .3rem;
-    .user-info{
+    .user-info {
       width: 100%;
       height: 2.84rem;
       padding: .2rem .3rem .2rem .3rem;
       box-sizing: border-box;
       background: #ffffff;
       position: relative;
-      .pic{
+      .pic {
         display: flex;
         align-items: center;
-       .img{
-         width:1.4rem;
-         height: 1.4rem;
-         background: pink;
-         margin-right: .33rem;
-       }
-        .name{
+        .img {
+          width: 1.4rem;
+          height: 1.4rem;
+          background: pink;
+          margin-right: .33rem;
+        }
+        .name {
           font-size: .36rem;
         }
       }
-      .name1{
+      .name1 {
         display: flex;
         justify-content: space-between;
         margin-top: .66rem;
       }
-      .line{
+      .line {
         width: 7.2rem;
         height: 1px;
         background: #D7D7D7;
@@ -95,7 +100,7 @@
         bottom: .86rem;
       }
     }
-    .password{
+    .password {
       position: relative;
       width: 100%;
       height: 1.86rem;
@@ -103,16 +108,16 @@
       box-sizing: border-box;
       margin-top: .2rem;
       background: #ffffff;
-      .signup{
+      .signup {
         display: flex;
         justify-content: space-between;
       }
-      .trad{
+      .trad {
         display: flex;
         justify-content: space-between;
         margin-top: .49rem;
       }
-      .line{
+      .line {
         width: 7.2rem;
         height: 1px;
         background: #D7D7D7;
@@ -122,7 +127,7 @@
         margin: auto;
       }
     }
-    .address{
+    .address {
       width: 100%;
       height: 1.08rem;
       padding: .2rem;

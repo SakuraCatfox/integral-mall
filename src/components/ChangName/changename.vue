@@ -1,8 +1,7 @@
 <template>
     <div class="container">
-      <input type="text" >
-      <div style="margin: .2rem 0 .6rem .3rem;color: #989898">您当前的昵称为：</div>
-      <div class="line"></div>
+      <input type="text" placeholder="请输入新昵称" v-model="name">
+      <div style="margin: .2rem 0 .6rem .3rem;color: #989898">您当前的昵称为：{{curname}}</div>
       <div class="btn">
         保存
       </div>
@@ -12,7 +11,12 @@
 <script>
     export default {
         name: "changename",
-        curname:'魏爸爸',
+        data(){
+          return{
+            curname:'魏爸爸',
+            name:'',
+          }
+        }
     }
 </script>
 
@@ -27,17 +31,17 @@
     background: #F8F8F8;
     position: relative;
     input{
+      width: 6.9rem;
+      height: .58rem;
       background:#F8F8F8;
       outline:0;
+      border: none;
+      padding: .14rem .2rem .14rem .24rem;
+      box-sizing: border-box;
+      border-bottom: 1px solid #FF9854;
+      font-size: .3rem;
     }
-    .line {
-      width: 100%;
-      height: 1px;
-      background: #FF9854;
-      position: absolute;
-      top: 1.16rem;
-      border-width: 0;
-    }
+
     .btn{
       width: 100%;
       height: .98rem;

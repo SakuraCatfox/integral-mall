@@ -7,11 +7,12 @@
       <div class="line">
 
       </div>
-      <input type="text" placeholder="请输入旧密码" ref="old">
+      <input type="text" placeholder="请输入手机号" ref="old">
       <div class="eye" @click="showoldpassword">
 
       </div>
     </div>
+    <!--验证码-->
     <div class="newpassword" ref="newwrapper">
       <div class="img">
 
@@ -19,13 +20,13 @@
       <div class="line">
 
       </div>
-      <input type="text" placeholder="请输入新密码" ref="newp">
-      <div class="eye" @click="shownewpassword">
-
+      <input type="text" placeholder="请输入验证码" ref="newp">
+      <div class="yzm">
+        获取验证码
       </div>
     </div>
     <div class="btn" @click="match">
-      确认修改
+      下一步
     </div>
   </div>
 </template>
@@ -161,15 +162,18 @@
         outline: 0;
         font-size: .24rem;
       }
-      .eye {
-        width: .2rem;
-        height: .2rem;
-        background: #979797;
+      .yzm{
         position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        right: .2rem;
+        right: 0;
+        width: 2.4rem;
+        height: .88rem;
+        background:linear-gradient(90deg,rgba(255,165,84,1) 0%,rgba(253,133,73,1) 100%);
+        border-radius:0px 4px 4px 0px;
+        border:1px solid rgba(215,215,215,1);
+        font-size: .28rem;
+        color: #ffffff;
+        text-align: center;
+        line-height: .88rem;
       }
     }
     .btn {

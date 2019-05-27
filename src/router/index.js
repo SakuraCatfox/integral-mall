@@ -14,6 +14,9 @@ import Order from '../components/Order/Order'
 import Set from '../components/Set/set'
 import ChangeName from '../components/ChangName/changename'
 import ChangeLoginPassword from '../components/ChangeLoginPassword/changeloginpassword'
+import ChangeTradPassword from '../components/ChangeTradPassword/changetradpassword'
+import Ress from '../components/Ress/ress'
+import AddAddress from '../components/AddAddress/addaddress'
 
 Vue.use(Router)
 
@@ -93,6 +96,21 @@ export default new Router({
       path:'/changeloginpassword',
       name:'changeloginpassword',
       component:ChangeLoginPassword
+    },
+    {
+      path:'/ress',
+      name:'ress',
+      component:Ress
+    },
+    {
+      path:'/changetradpassword',
+      name:'changetradpassword',
+      component:ChangeTradPassword
+    },
+    {
+      path:'/addaddress',
+      name:'addaddress',
+      component:AddAddress
     },
     {
       path:'*',

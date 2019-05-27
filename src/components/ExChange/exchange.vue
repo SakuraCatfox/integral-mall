@@ -33,7 +33,7 @@
     <div class="mine-info">
       <div style="margin-bottom: .18rem">兑换商品需要：
         <span style="color: #FF9854;">
-          <span style="font-size: .5rem">{{money}}</span>积分</span>
+          <span style="font-size: .5rem">{{count}}</span>积分</span>
       </div>
       <div style="color: #989898;font-size: .24rem">您当前账户积分余额为：12000</div>
     </div>
@@ -51,28 +51,21 @@
       return{
         num:1,
         money:200,
-        cc:'',
+
       }
     },
     methods:{
       add(){
-
         this.num++
-        console.log(this.num)
-        this.money=this.num*this.money
       },
       sub(){
-
         this.num--
-        if (this.num<=1){
-          this.num=1
-        }
-        console.log(this.num)
-        this.money=this.money/this.num
       }
     },
     computed:{
-
+      count(){
+        return this.num*this.money
+      }
     }
   }
 </script>
