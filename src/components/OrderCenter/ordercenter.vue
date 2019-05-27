@@ -120,7 +120,7 @@
           }
         },
       methods:{
-        clickHandler(){
+        clickHandler(v){
 
         },
         jumptoorder(itemId){

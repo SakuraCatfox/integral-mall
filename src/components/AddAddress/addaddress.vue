@@ -19,7 +19,9 @@
       </div>
       <div class="moren">
         <div>设为默认地址</div>
+        <switcher v-model="isDefault"  ></switcher>
       </div>
+      <input type="text" v-model="text" >
       <div class="btn">
         保存地址
       </div>
@@ -27,8 +29,24 @@
 </template>
 
 <script>
+    import Switcher from '../../common/Switcher.vue'
     export default {
-        name: "addaddress"
+        name: "addaddress",
+        components:{ Switcher },
+        data(){
+          return{
+            isDefault:false,
+            text:''
+          }
+        },
+        methods: {
+          inputHandler(e){
+            this.text = e.target.value
+          }
+        },
+        created() {
+          window.AD = this
+        },
     }
 </script>
 
@@ -78,20 +96,21 @@
       }
     }
     .moren{
-      width: 100%;
       height: .88rem;
-      padding: .2rem;
       font-size: .28rem;
+      padding:0 .2rem;
       background: #ffffff;
       margin-top: .2rem;
       box-sizing: border-box;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
     .btn{
       width:100%;
       height:.98rem;
       background:linear-gradient(90deg,rgba(255,165,84,1) 0%,rgba(253,133,73,1) 100%);
       border-radius:4px;
-      position: absolute;
       top: 6.08rem;
       font-size: .36rem;
       text-align: center;
