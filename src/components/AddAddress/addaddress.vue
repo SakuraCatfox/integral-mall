@@ -19,6 +19,7 @@
       </div>
       <div class="moren">
         <div>设为默认地址</div>
+        <Switcher v-model="switched"></Switcher>
       </div>
       <div class="btn">
         保存地址
@@ -27,8 +28,20 @@
 </template>
 
 <script>
+  import Switcher from '../../common/Switcher/Switcher'
     export default {
-        name: "addaddress"
+        name: "addaddress",
+        components:{Switcher},
+        data(){
+          return{
+            switched:false
+          }
+        },
+      methods:{
+        switches(v){
+          this.switched=!this.switched
+        }
+      }
     }
 </script>
 
@@ -79,12 +92,16 @@
     }
     .moren{
       width: 100%;
-      height: .88rem;
-      padding: .2rem;
-      font-size: .28rem;
+      height: 0.88rem;
+      font-size: 0.28rem;
       background: #ffffff;
-      margin-top: .2rem;
-      box-sizing: border-box;
+      margin-top: 0.2rem;
+      -webkit-box-sizing: border-box;
+       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 .2rem;
     }
     .btn{
       width:100%;
