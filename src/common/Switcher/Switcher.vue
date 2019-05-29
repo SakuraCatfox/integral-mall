@@ -1,6 +1,6 @@
 <template>
-  <div class="switcher-container" :class="switched?'actived':''">
-    <div class="circular"  @click="changed(v)" :class="switched?'actived':''">
+  <div class="switcher-container" :class="value?'actived':''">
+    <div class="circular"  @click="changed" :class="value?'actived':''">
     </div>
   </div>
 </template>
@@ -8,7 +8,12 @@
   export default {
     name: "Switcher",
     props:{
-      value:{type:Boolean} //
+      model:{prop:'value',event:'input',required:false},
+      switched:{
+          type:Boolean,
+          required:false,
+          default:false
+      }
     },
     data(){
       return {
@@ -16,7 +21,8 @@
       }
     },
     methods:{
-      changed(v){
+      changed(){
+        console.log(!this.value)
         this.$emit('input',!this.value)
       }
     }

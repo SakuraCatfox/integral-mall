@@ -19,7 +19,7 @@
       </div>
       <div class="moren">
         <div>设为默认地址</div>
-        <Switcher v-model="switched"></Switcher>
+        <Switcher v-model="value"></Switcher>
       </div>
       <div class="btn">
         保存地址
@@ -34,12 +34,13 @@
         components:{Switcher},
         data(){
           return{
-            switched:false
+            value:false
           }
         },
       methods:{
         switches(v){
-          this.switched=!this.switched
+          console.log(v)
+          this.value=v
         }
       }
     }
