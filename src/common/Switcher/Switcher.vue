@@ -30,7 +30,7 @@
   }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="less">wa
   .switcher-container {
     width: 1.08rem;
     height: .48rem;
